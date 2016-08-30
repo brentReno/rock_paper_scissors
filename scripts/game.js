@@ -1,6 +1,7 @@
 //Initiate handshake
 console.log("Games.js is sourced");
 var userInput;
+var games=0;
 var computerChoice;
  var playGame = function(){
   console.log("Inside PlayGame");
@@ -62,3 +63,10 @@ var computerInput =function(){
     console.log(computerChoice);
   }
 };
+$(document).ready(function(){
+  console.log("Document is ready");
+  $("#gamesPlayed").on('click', function(){
+    games++;
+    console.log(games);
+  });
+});
