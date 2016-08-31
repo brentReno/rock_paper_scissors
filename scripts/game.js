@@ -6,8 +6,14 @@ var computerChoice;
 var rocksChosen = 0;
 var papersChosen = 0;
 var scissorsChosen =  0;
+
+// Decide one or two player game
+//if one player game
+
+
  var playGame = function(){
   console.log("Inside PlayGame");
+
 // get user input
 userInput = document.getElementById('userInput').value;
 console.log(userInput);
@@ -17,7 +23,6 @@ compareInputs(userInput, computerInput);
 };//end play game
 
   //compare user and computer inputs
-    //alert win, loss tie
   var compareInputs = function(userInput, computerInput){
     if(userInput === computerChoice){
       alert("It's a tie! Play again?");
@@ -43,6 +48,7 @@ compareInputs(userInput, computerInput);
   };
 
   //alert win, loss tie
+  //set random numbers to rock, paper, scissors
 var computerInput =function(){
   //create random number
   var randomNumber = function(){
@@ -66,6 +72,8 @@ var computerInput =function(){
     console.log(computerChoice);
   }
 };
+
+//display games played on DOM
 $(document).ready(function(){
   console.log("Document is ready");
   $("#gamesPlayed").on('click', function(){
@@ -76,7 +84,8 @@ $(document).ready(function(){
     choicesTally(userInput);
   });
 });
-// tally the toal of each type
+
+// tally the toal of each  selection type on the DOM type
 var choicesTally = function(choice){
   console.log('in choicesTally');
 
