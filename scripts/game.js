@@ -3,6 +3,9 @@ console.log("Games.js is sourced");
 var userInput;
 var games=0;
 var computerChoice;
+var rocksChosen = 0;
+var papersChosen = 0;
+var scissorsChosen =  0;
  var playGame = function(){
   console.log("Inside PlayGame");
 // get user input
@@ -69,8 +72,22 @@ $(document).ready(function(){
     games++;
     console.log(games);
     $("#outcomesDiv").html("<p id='totalGames'> You have played " + games +" game(s).</p>");
-    $("#totalGames").append('<p> You chose ' +userInput+' this turn.</p>');
-    $("#totalGames").append('<p> The computer chose ' + computerChoice + ' this turn</p>');
-
+    // store user choices functionand append to div
+    choicesTally(userInput);
   });
 });
+// tally the toal of each type
+var choicesTally = function(choice){
+  console.log('in choicesTally');
+
+  if (choice == "Rock"){
+    rocksChosen++;
+  }
+  else if( choice == "Paper"){
+    papersChosen++;
+  }
+  else if( choice == "Scissors"){
+    scissorsChosen++;
+  }
+  $('#totalGames').append("<br><p'totalChoices'> You have chosen Rock " + rocksChosen + " times, Paper " + papersChosen +" times, and Scissors " + scissorsChosen +".</p>");
+}; //end choicesTally
