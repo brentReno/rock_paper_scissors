@@ -68,5 +68,9 @@ $(document).ready(function(){
   $("#gamesPlayed").on('click', function(){
     games++;
     console.log(games);
+    $("#outcomesDiv").html("<p id='totalGames'> You have played " + games +" game(s).</p>");
+    $("#totalGames").append('<p> You chose ' +userInput+' this turn.</p>');
+    $("#totalGames").append('<p> The computer chose ' + computerChoice + ' this turn</p>');
+
   });
 });
