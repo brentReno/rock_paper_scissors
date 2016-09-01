@@ -7,15 +7,21 @@
     <script type="text/javascript" src="scripts/game.js"></script>
     </script>
   </head>
-  <body>
-<h1>Rock, Paper, Scissors</h1>
-<h3>Which will you choose?</h3>
-<select id="userInput">
-  <option>Rock</option>
-  <option>Paper</option>
-  <option>Scissors</option>
-</select>
-<button onClick="playGame()" id="gamesPlayed">Rock, Paper, Scissors, Go!</button>
-<div id="outcomesDiv"></div>
+  <body onLoad= "hideSinglePlayer()">
+<div id ="playerSelection">
+  <h1 id="title">Rock, Paper, Scissors</h1>
+  <h3 id ="numPlayers"> How many Players?</h3>
+  <button id="soloPlay"> Single Player</button><button id="twoPlay">Two Players</button>
+</div>
+<div id = "singlePlayer" >
+  <h3>Which will you choose?</h3>
+  <select id="playerOneIn">
+    <option>Rock</option>
+    <option>Paper</option>
+    <option>Scissors</option>
+  </select>
+  <button onClick="playGameSolo()" id="gamesPlayed">Rock, Paper, Scissors, Go!</button>
+  <div id="outcomesDiv"></div>
+</div>
   </body>
 </html>
